@@ -19,4 +19,19 @@ public class CustomerServiceImpl implements CustomerService {
     public List<CustomerDto> getAllCustomers() {
         return customerRepository.getAllCustomer();
     }
+
+    @Override
+    public boolean addCustomer(CustomerDto customerDto) {
+        return customerRepository.addCustomer(customerDto);
+    }
+
+    @Override
+    public boolean updateCustomer(CustomerDto customerDto) {
+        return customerRepository.updateCustomer(customerDto);
+    }
+
+    @Override
+    public CustomerDto searchCustomer(String id) {
+        return customerRepository.searchCustomerById(id);
+    }
 }

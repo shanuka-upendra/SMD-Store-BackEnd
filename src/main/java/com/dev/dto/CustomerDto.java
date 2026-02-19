@@ -2,6 +2,7 @@ package com.dev.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Setter
@@ -13,7 +14,7 @@ public class CustomerDto {
     private String id;
     private String title;
     private String name;
-    private Date dob;
+    private LocalDate dob;
     private Double salary;
     private String address;
     private String city;
