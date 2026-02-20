@@ -26,4 +26,14 @@ public class ItemController {
     public boolean addItem(@RequestBody ItemDto itemDto){
         return itemService.addItem(itemDto);
     }
+
+    @PutMapping("/update-item")
+    public boolean updateItem(@RequestBody ItemDto itemDto){
+        return itemService.updateItem(itemDto);
+    }
+
+    @DeleteMapping("/delete-item/{id}")
+    public boolean deleteItem(@PathVariable String id){
+        return itemService.deleteItem(id);
+    }
 }

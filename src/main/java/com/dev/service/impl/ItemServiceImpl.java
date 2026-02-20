@@ -23,4 +23,14 @@ public class ItemServiceImpl implements ItemService {
     public boolean addItem(ItemDto itemDto) {
         return itemRepository.addItems(itemDto);
     }
+
+    @Override
+    public boolean updateItem(ItemDto itemDto) {
+        return itemRepository.updateItems(itemDto);
+    }
+
+    @Override
+    public boolean deleteItem(String id) {
+        return itemRepository.deleteItem(id);
+    }
 }

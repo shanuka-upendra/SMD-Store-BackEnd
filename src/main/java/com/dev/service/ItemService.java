@@ -7,4 +7,6 @@ import java.util.List;
 public interface ItemService {
     List<ItemDto> getAllItems();
     boolean addItem(ItemDto itemDto);
+    boolean updateItem(ItemDto itemDto);
+    boolean deleteItem(String id);
 }

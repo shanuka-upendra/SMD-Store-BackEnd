@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@RequiredArgsConstructor
 @Repository
+@RequiredArgsConstructor
 public class ItemRepositoryImpl implements ItemRepository {
 
     private final JdbcTemplate jdbcTemplate;
@@ -38,4 +38,23 @@ public class ItemRepositoryImpl implements ItemRepository {
                 itemDto.getPrice(),
                 itemDto.getQty()) > 0;
     }
+
+    @Override
+    public boolean updateItems(ItemDto itemDto) {
+        String sql = "UPDATE item SET Description = ? , PackSize = ? , UnitPrice = ? , QtyOnHand = ? WHERE ItemCode = ?";
+        return jdbcTemplate.update(sql,
+                itemDto.getDescription(),
+                itemDto.getPackSize(),
+                itemDto.getPrice(),
+                itemDto.getQty(),
+                itemDto.getItemCode()) > 0;
+    }
+
+    @Override
+    public boolean deleteItem(String id) {
+        String sql = "DELETE from item WHERE itemCode = ?";
+        return jdbcTemplate.update(sql,id) > 0;
+    }
+
+
 }
