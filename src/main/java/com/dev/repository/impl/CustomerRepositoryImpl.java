@@ -5,7 +5,6 @@ import com.dev.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -65,7 +64,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Override
     public boolean deleteCustomer(String id) {
-        return false;
+        String sql = "DELETE from customer WHERE CustID = ? ";
+        return jdbcTemplate.update(sql,id) > 0 ;
     }
 
     @Override
