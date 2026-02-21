@@ -1,4 +1,4 @@
-package com.dev.Controller;
+package com.dev.controller;
 
 import com.dev.dto.ItemDto;
 import com.dev.service.ItemService;
