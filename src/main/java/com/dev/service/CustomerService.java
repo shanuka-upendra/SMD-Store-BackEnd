@@ -8,6 +8,6 @@ public interface CustomerService {
     List<CustomerDto> getAllCustomers();
     boolean addCustomer(CustomerDto customerDto);
     boolean updateCustomer(CustomerDto customerDto);
-
     CustomerDto searchCustomer(String id);
+    boolean deleteCustomer(String id);
 }

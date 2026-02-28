@@ -37,5 +37,9 @@ public class CustomerController {
         return customerService.searchCustomer(id);
     }
 
+    @DeleteMapping("/delete-customer/{id}")
+    public boolean deleteCustomer(@PathVariable String id){
+        return customerService.deleteCustomer(id);
+    }
 
 }
